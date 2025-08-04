@@ -1,11 +1,11 @@
 @use '../../styles/variables.scss' as *;
 
 .message {
-  font-size: getSize('numbers', 8); // about 16px
+  font-size: getSize('numbers', 8); 
   line-height: 1.6;
-  color: getColor('dark-gray'); // using your dark gray color
+  color: getColor('dark-gray');
   padding: getSize('numbers', 6) getSize('sizes', xl);
-  background-color: getColor('secondary'); // subtle background color
+  background-color: getColor('secondary'); 
   border-radius: getSize('numbers', 6);
   margin-top: getSize('numbers', 8);
   text-align: center;
