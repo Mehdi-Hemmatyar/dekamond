@@ -1,0 +1,69 @@
+@use "sass:map";
+
+//size
+$size-scale: (
+  sizes: (
+    xxs: 2px,
+    xs: 4px,
+    sm: 8px,
+    md: 12px,
+    lg: 16px,
+    xl: 20px,
+    xxl: 24px,
+    xxxl: 32px,
+  ),
+  numbers: (
+    1: 2px,
+    2: 4px,
+    3: 6px,
+    4: 8px,
+    5: 10px,
+    6: 12px,
+    7: 14px,
+    8: 16px,
+    9: 18px,
+    10: 20px,
+  ),
+);
+
+@function getSize($group, $key) {
+  @return map.get(map.get($size-scale, $group), $key);
+}
+
+//colors
+$color-scale: (
+  primary: #0070f3,
+  primary-hover: #005dc1,
+  secondary: #eaeaea,
+  secondary-hover: #cfcfcf,
+  danger: #e00,
+  danger-hover: #c00,
+  success: #28a745,
+  warning: #ffc107,
+  white: #fff,
+  black: #111,
+  gray: #888,
+  light-gray: #f5f5f5,
+  dark-gray: #333,
+  background: #ffffff,
+  background-alt: #f9f9f9,
+  foreground: #111111,
+  text-muted: #666666,
+  border: #dddddd,
+  indigo-50: #eef2ff,
+  indigo-100: #e0e7ff,
+  indigo-500: #6366f1,
+  indigo-600: #4f46e5,
+  indigo-700: #4338ca,
+  purple-50: #f5f3ff,
+  purple-600: #8b5cf6,
+);
+@function getColor($key) {
+  @return map.get($color-scale, $key);
+}
+
+
+
+@mixin gradient-bg($from, $to) {
+  background-image: linear-gradient(to bottom right, $from, $to);
+}

@@ -1,0 +1,91 @@
+@use '../../styles/variables.scss' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: getSize('sizes', xl);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  transform: scale(1);
+
+  &:hover:not(.disabled) {
+    transform: scale(1.02);
+  }
+
+  &.primary {
+    background-color: getColor('primary');
+    color: getColor('white');
+
+    &:hover {
+      background-color: getColor('primary-hover');
+    }
+  }
+
+  &.secondary {
+    background-color: getColor('secondary');
+    color: getColor('black');
+
+    &:hover {
+      background-color: getColor('secondary-hover');
+    }
+  }
+
+  &.danger {
+    background-color: getColor('danger');
+    color: getColor('white');
+
+    &:hover {
+      background-color: getColor('danger-hover');
+    }
+  }
+
+  &.sm {
+    padding: getSize('sizes', xs) getSize('sizes', md);
+    font-size: 12px;
+  }
+
+  &.md {
+    padding: getSize('sizes', sm) getSize('sizes', xl);
+    font-size: 14px;
+  }
+
+  &.lg {
+    padding: getSize('sizes', md) getSize('sizes', xxl);
+    font-size: 16px;
+  }
+
+  &.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  &.fullWidth {
+    width: 100%;
+    font-weight: 500;
+  }
+
+  &.loading {
+    opacity: 0.8;
+    pointer-events: none;
+  }
+}
+
+.content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: getSize(numbers, 4);
+}
+
+.spinner {
+  display: inline-flex;
+  font-size: 1rem;
+}
+
+.iconAfter {
+  display: inline-flex;
+  margin-left: getSize(numbers, 4);
+}

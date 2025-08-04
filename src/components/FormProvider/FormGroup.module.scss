@@ -1,0 +1,78 @@
+@use '../../styles/variables.scss' as *;
+
+
+.formProvider {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 870px;
+  padding: getSize(sizes, xl);
+  background-color: getColor(white);
+  border-radius: getSize(sizes, xxl);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  gap: getSize(sizes, xl);
+
+  @media (max-width: 480px) {
+    padding: getSize(sizes, md);
+    border-radius: getSize(sizes, xl);
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: getSize(sizes, xs);
+  direction: rtl;
+
+  label {
+    font-weight: 400;
+    color: getColor(dark-gray);
+    font-size: getSize(numbers, 6);
+  }
+
+  input {
+    padding: getSize(numbers, 4) getSize(numbers, 5);
+    border: 1px solid getColor(secondary);
+    border-radius: getSize(numbers, 3);
+    font-size: getSize(numbers, 6);
+    background-color: transparent;
+    color: getColor(foreground);
+    transition: border-color 0.2s;
+    direction: rtl;
+
+    &:focus {
+      border-color: getColor(primary);
+      outline: none;
+    }
+
+    &::placeholder {
+      color: getColor(gray);
+    }
+  }
+}
+
+
+
+.errorList {
+  margin: 0;
+  padding-right: getSize('sizes', lg);
+  color: getColor('danger');
+  list-style: none;
+}
+
+.errorItem {
+  position: relative;
+  margin-bottom: getSize('sizes', xs);
+  padding-right: getSize('sizes', md);
+  font-size: getSize('numbers', 6);
+  
+  &::before {
+    content: "⚠";  // or use any unicode symbol, or an SVG icon via background-image
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: getColor('danger');
+    font-weight: bold;
+  }
+}

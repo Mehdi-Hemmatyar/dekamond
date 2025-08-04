@@ -1,0 +1,14 @@
+
+@use './variables' as *;
+
+.main {
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include gradient-bg( getColor(indigo-50), getColor(purple-50));
+}
+.section {
+    padding: getSize(sizes , xl) ;     
+}

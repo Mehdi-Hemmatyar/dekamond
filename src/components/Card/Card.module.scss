@@ -1,0 +1,87 @@
+@use "../../styles/variables.scss" as *;
+
+.card {
+  background-color: getColor(white);
+  border-radius: getSize(numbers, 10);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 650px;
+  min-width: 280px;
+
+  // Responsive min-width adjustments
+  @media (min-width: 640px) {
+    min-width: 320px;
+  }
+
+  @media (min-width: 768px) {
+    min-width: 360px;
+  }
+
+  @media (min-width: 1024px) {
+    min-width: 650px;
+  }
+}
+
+.header {
+  @include gradient-bg( getColor(indigo-500),  getColor(purple-600));
+  padding: getSize(numbers, 6);
+  text-align: center;
+  color: getColor(white);
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  p {
+    color: getColor(indigo-100);
+    margin-top: getSize(numbers, 2);
+    font-size: 0.875rem;
+  }
+}
+
+
+.body {
+  padding: getSize(numbers, 6);
+
+  @media (min-width: 640px) {
+    padding: getSize(numbers, 8);
+  }
+}
+
+
+.footer {
+  margin-top: getSize(numbers, 6);
+  font-size: 0.875rem;
+  text-align: center;
+  color: #4b5563; // Tailwind's gray-600
+
+  a {
+    color: getColor(indigo-600);
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      color: getColor(indigo-500);
+    }
+  }
+}
+
+
+.afterCard {
+  margin-top: getSize(numbers, 6);
+  font-size: 0.875rem;
+  text-align: center;
+  color: #4b5563;
+
+  a {
+    color: getColor(indigo-600);
+    font-weight: 500;
+
+    &:hover {
+      color: getColor(indigo-500);
+    }
+  }
+}

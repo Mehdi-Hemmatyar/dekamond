@@ -1,0 +1,19 @@
+@use '../../styles/variables.scss' as *;
+
+.message {
+  font-size: getSize('numbers', 8); // about 16px
+  line-height: 1.6;
+  color: getColor('dark-gray'); // using your dark gray color
+  padding: getSize('numbers', 6) getSize('sizes', xl);
+  background-color: getColor('secondary'); // subtle background color
+  border-radius: getSize('numbers', 6);
+  margin-top: getSize('numbers', 8);
+  text-align: center;
+  font-weight: 500;
+  direction: rtl;
+
+  @media (max-width: 480px) {
+    font-size: getSize('numbers', 6);
+    padding: getSize('numbers', 4) getSize('sizes', lg);
+  }
+}
