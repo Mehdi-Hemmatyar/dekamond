@@ -67,7 +67,7 @@
   font-size: getSize('numbers', 6);
   
   &::before {
-    content: "⚠";  // or use any unicode symbol, or an SVG icon via background-image
+    content: "⚠";  
     position: absolute;
     right: 0;
     top: 50%;
